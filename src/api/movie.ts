@@ -1,7 +1,7 @@
 import axios from "axios";
 import { API_BASE_URL } from "../config";
 
-// --- Interfaces de Tipos para os Dados ---
+// --- Interfaces de Tipos para os Dados 
 
 export interface YearWithMultipleWinners {
   year: number;
@@ -47,7 +47,7 @@ interface FetchMoviesParams {
   year?: number;
 }
 
-// --- Funções de Fetch ---
+// Funções de Fetch 
 
 export const fetchYearsWithMultipleWinners = () => {
   return axios.get<{ years: YearWithMultipleWinners[] }>(
