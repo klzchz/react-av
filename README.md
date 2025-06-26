@@ -4,7 +4,7 @@
 ## Instalação
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/seunomeusuario/razzie-app.git
+    git clone https://github.com/klzchz/react-av.git
     ```
 2. Navegue até o diretório do projeto:
     ```bash
