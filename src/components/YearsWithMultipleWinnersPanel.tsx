@@ -5,7 +5,9 @@ import { fetchYearsWithMultipleWinners } from "../api/movie";
 export function YearsWithMultipleWinnersPanel() {
   const [years, setYears] = useState<YearWithMultipleWinners[]>([]);
   useEffect(() => {
-    fetchYearsWithMultipleWinners().then((res) => setYears(res.data.years));
+    fetchYearsWithMultipleWinners().then((res) =>
+      setYears(res.data.years || []),
+    );
   }, []);
 
   return (

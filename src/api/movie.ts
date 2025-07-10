@@ -51,24 +51,26 @@ interface FetchMoviesParams {
 
 export const fetchYearsWithMultipleWinners = () => {
   return axios.get<{ years: YearWithMultipleWinners[] }>(
-    `${API_BASE_URL}?projection=years-with-multiple-winners`,
+    `${API_BASE_URL}?projection=years-with-multiple-winners&page=1&size=1`,
   );
 };
 
 export const fetchStudiosWithWinCount = () => {
   return axios.get<{ studios: StudioWin[] }>(
-    `${API_BASE_URL}?projection=studios-with-win-count`,
+    `${API_BASE_URL}?projection=studios-with-win-count&page=1&size=1`,
   );
 };
 
 export const fetchMaxMinWinIntervalForProducers = () => {
   return axios.get<MaxMinIntervalResponse>(
-    `${API_BASE_URL}?projection=max-min-win-interval-for-producers`,
+    `${API_BASE_URL}?projection=max-min-win-interval-for-producers&page=1&size=1`,
   );
 };
 
 export const fetchMovieWinnersByYear = (year: number) => {
-  return axios.get<Movie[]>(`${API_BASE_URL}?winner=true&year=${year}`);
+  return axios.get<Movie[]>(
+    `${API_BASE_URL}?page=0&size=99&winner=true&year=${year}`,
+  );
 };
 
 export const fetchMovies = ({

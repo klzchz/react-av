@@ -6,7 +6,8 @@ export function TopStudiosPanel() {
   const [studios, setStudios] = useState<StudioWin[]>([]);
   useEffect(() => {
     fetchStudiosWithWinCount().then((res) => {
-      const topStudios = res.data.studios
+      const studiosData = res.data.studios || [];
+      const topStudios = studiosData
         .sort((a, b) => b.winCount - a.winCount)
         .slice(0, 3);
       setStudios(topStudios);

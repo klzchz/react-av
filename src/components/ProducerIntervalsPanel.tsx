@@ -10,6 +10,17 @@ export function ProducerIntervalsPanel() {
     fetchMaxMinWinIntervalForProducers().then((res) => setIntervals(res.data));
   }, []);
 
+  if (!intervals) {
+    return (
+      <div>
+        <h3 className="text-lg font-semibold mb-2">
+          Intervalo de prêmios dos produtores
+        </h3>
+        <div>Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <h3 className="text-lg font-semibold mb-2">
@@ -24,7 +35,7 @@ export function ProducerIntervalsPanel() {
           </tr>
         </thead>
         <tbody>
-          {intervals?.max.map((p) => (
+          {(intervals.max || []).map((p) => (
             <tr key={p.producer} className="border-t border-gray-700">
               <td className="px-4 py-2">{p.producer}</td>
               <td className="px-4 py-2">{p.interval}</td>
@@ -41,7 +52,7 @@ export function ProducerIntervalsPanel() {
           </tr>
         </thead>
         <tbody>
-          {intervals?.min.map((p) => (
+          {(intervals.min || []).map((p) => (
             <tr key={p.producer} className="border-t border-gray-700">
               <td className="px-4 py-2">{p.producer}</td>
               <td className="px-4 py-2">{p.interval}</td>
