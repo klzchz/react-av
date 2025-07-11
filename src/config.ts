@@ -1,1 +1,1 @@
-export const API_BASE_URL = "https://challenge.outsera.tech/api/movies";
+export const API_BASE_URL = "https://challenge-old.outsera.tech/api/movies";

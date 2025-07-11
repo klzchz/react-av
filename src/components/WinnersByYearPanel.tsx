@@ -13,6 +13,7 @@ export function WinnersByYearPanel() {
     try {
       const response = await fetchMovieWinnersByYear(parseInt(year));
       setWinners(response.data);
+      console.log(response.data)
     } finally {
       setLoading(false);
     }
@@ -45,7 +46,7 @@ export function WinnersByYearPanel() {
           </tr>
         </thead>
         <tbody>
-          {winners.map((movie) => (
+          {Array.isArray(winners) && winners.map((movie) => (
             <tr key={movie.id} className="border-t border-gray-700">
               <td className="px-4 py-2">{movie.id}</td>
               <td className="px-4 py-2">{movie.title}</td>

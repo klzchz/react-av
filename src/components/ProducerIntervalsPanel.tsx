@@ -7,7 +7,7 @@ export function ProducerIntervalsPanel() {
     null,
   );
   useEffect(() => {
-    fetchMaxMinWinIntervalForProducers().then((res) => setIntervals(res.data));
+    fetchMaxMinWinIntervalForProducers().then((res) =>{ console.log(res.data);setIntervals(res.data)});
   }, []);
 
   if (!intervals) {
