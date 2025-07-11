@@ -6,15 +6,11 @@ import { YearsWithMultipleWinnersPanel } from "../components/YearsWithMultipleWi
 export default function Dashboard() {
   return (
     <div className="p-4">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="flex flex-col gap-6">
-          <YearsWithMultipleWinnersPanel />
-          <ProducerIntervalsPanel />
-        </div>
-        <div className="flex flex-col gap-6">
-          <TopStudiosPanel />
-          <WinnersByYearPanel />
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <YearsWithMultipleWinnersPanel />
+        <ProducerIntervalsPanel />
+        <TopStudiosPanel />
+        <WinnersByYearPanel />
       </div>
     </div>
   );
